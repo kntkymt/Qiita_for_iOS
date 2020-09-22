@@ -15,7 +15,7 @@
 本アプリはQiitaアプリケーションのクライアントID, クライアントシークレットを利用します。
 
 1. Qiitaウェブサイトの[アプリケーション設定ページ](https://qiita.com/settings/applications)からクライアントID, クライアントシークレットを取得してください。
-1. `Configration/.env.sample`を参考に`Configration/.env`を作成し、1. で取得したクライアントID, クライアントシークレットを設定してください。
+1. `Qiita/Configuration/.env.sample`を参考に`Qiita/Configuration/.env`を作成し、1. で取得したクライアントID, クライアントシークレットを設定してください。
 
 以上でセットアップは完了です。
 
