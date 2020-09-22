@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qXI-oN-3Cs" customClass="SearchTagCell" customModule="Qiita" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MLU-gP-XmK">
+                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="wXL-wE-Wwf">
+                        <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                    </imageView>
+                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbH-Zl-rDd">
+                        <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buf-3y-IAL">
+                        <rect key="frame" x="4" y="52.5" width="117" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tbH-Zl-rDd" firstAttribute="top" secondItem="MLU-gP-XmK" secondAttribute="top" id="4pe-1i-QJQ"/>
+                    <constraint firstItem="buf-3y-IAL" firstAttribute="leading" secondItem="MLU-gP-XmK" secondAttribute="leading" constant="4" id="5hQ-jF-pEm"/>
+                    <constraint firstAttribute="trailing" secondItem="tbH-Zl-rDd" secondAttribute="trailing" id="96d-hN-e9b"/>
+                    <constraint firstAttribute="bottom" secondItem="wXL-wE-Wwf" secondAttribute="bottom" id="ESI-vj-2SE"/>
+                    <constraint firstItem="wXL-wE-Wwf" firstAttribute="top" secondItem="MLU-gP-XmK" secondAttribute="top" id="Fev-Fn-3zX"/>
+                    <constraint firstItem="wXL-wE-Wwf" firstAttribute="leading" secondItem="MLU-gP-XmK" secondAttribute="leading" id="OLh-cN-h55"/>
+                    <constraint firstAttribute="trailing" secondItem="buf-3y-IAL" secondAttribute="trailing" constant="4" id="Vwt-zc-9e6"/>
+                    <constraint firstAttribute="trailing" secondItem="wXL-wE-Wwf" secondAttribute="trailing" id="YZ7-Fh-QIH"/>
+                    <constraint firstItem="tbH-Zl-rDd" firstAttribute="leading" secondItem="MLU-gP-XmK" secondAttribute="leading" id="m5O-cM-c8a"/>
+                    <constraint firstAttribute="bottom" secondItem="tbH-Zl-rDd" secondAttribute="bottom" id="mcu-Fw-hir"/>
+                    <constraint firstItem="buf-3y-IAL" firstAttribute="centerY" secondItem="MLU-gP-XmK" secondAttribute="centerY" id="w5b-lu-zAR"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="imageView" destination="wXL-wE-Wwf" id="IZl-Et-GL8"/>
+                <outlet property="wordLabel" destination="buf-3y-IAL" id="1nY-cD-Vjx"/>
+            </connections>
+            <point key="canvasLocation" x="-34.057971014492757" y="8.3705357142857135"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Image" width="100" height="100"/>
+    </resources>
+</document>

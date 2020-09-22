@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rbq-MB-p6z">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setting View Controller-->
+        <scene sceneID="8Em-aE-wL9">
+            <objects>
+                <viewController id="rbq-MB-p6z" customClass="SettingViewController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Gp-tn-xHH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5R0-71-QDB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="lQZ-eZ-vkE"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Setting" id="go7-58-60V">
+                                        <barButtonItem key="rightBarButtonItem" title="閉じる" id="0Gm-OH-1T2">
+                                            <color key="tintColor" name="Brand"/>
+                                            <connections>
+                                                <action selector="closeButtonDidTap:" destination="rbq-MB-p6z" id="Uxl-SE-JyQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPU-lo-90O">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <connections>
+                                    <segue destination="DpB-ZT-7tg" kind="embed" id="9Vh-ir-Tqt"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5R0-71-QDB" firstAttribute="leading" secondItem="Vut-kk-sMb" secondAttribute="leading" id="66W-Qq-7Ut"/>
+                            <constraint firstAttribute="bottom" secondItem="iPU-lo-90O" secondAttribute="bottom" id="C0p-us-FVQ"/>
+                            <constraint firstItem="iPU-lo-90O" firstAttribute="leading" secondItem="Vut-kk-sMb" secondAttribute="leading" id="W8e-8f-PUt"/>
+                            <constraint firstItem="iPU-lo-90O" firstAttribute="trailing" secondItem="Vut-kk-sMb" secondAttribute="trailing" id="kjP-OJ-Fgb"/>
+                            <constraint firstItem="5R0-71-QDB" firstAttribute="top" secondItem="Vut-kk-sMb" secondAttribute="top" id="pyE-fj-4Ab"/>
+                            <constraint firstItem="iPU-lo-90O" firstAttribute="top" secondItem="5R0-71-QDB" secondAttribute="bottom" id="xPA-zU-y4L"/>
+                            <constraint firstItem="5R0-71-QDB" firstAttribute="trailing" secondItem="Vut-kk-sMb" secondAttribute="trailing" id="xwB-hR-0eS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vut-kk-sMb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FV9-yM-kKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="112.5"/>
+        </scene>
+        <!--Setting Table View Controller-->
+        <scene sceneID="6rZ-WX-h2x">
+            <objects>
+                <tableViewController id="DpB-ZT-7tg" customClass="SettingTableViewController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8ps-ci-dER">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="T5K-FQ-NaM">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2et-m0-4Dr">
+                                        <rect key="frame" x="0.0" y="18" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2et-m0-4Dr" id="lbu-tp-VOP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログアウト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cy4-Md-EPn">
+                                                    <rect key="frame" x="156" y="10" width="102" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cy4-Md-EPn" firstAttribute="centerX" secondItem="lbu-tp-VOP" secondAttribute="centerX" id="3eK-CH-HnZ"/>
+                                                <constraint firstItem="cy4-Md-EPn" firstAttribute="centerY" secondItem="lbu-tp-VOP" secondAttribute="centerY" id="Vbw-dk-44f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="DpB-ZT-7tg" id="3u0-sk-Bzz"/>
+                            <outlet property="delegate" destination="DpB-ZT-7tg" id="aFh-hL-86g"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="signActionLabel" destination="cy4-Md-EPn" id="Lt9-XT-QT1"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5kb-oM-dUA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757" y="143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Brand">
+            <color red="0.33333333333333331" green="0.7686274509803922" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

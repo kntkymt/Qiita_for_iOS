@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Gg-iV-Msi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="zo7-EN-AuJ">
+            <objects>
+                <tabBarController id="2Gg-iV-Msi" customClass="MainViewController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VG3-nn-Nuf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="Brand"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="50K-2O-46Q" kind="relationship" relationship="viewControllers" id="e2R-zr-hLP"/>
+                        <segue destination="wcc-iO-Y4b" kind="relationship" relationship="viewControllers" id="t6Y-BT-0F4"/>
+                        <segue destination="Gq9-6b-Odq" kind="relationship" relationship="viewControllers" id="yY1-jB-Rxc"/>
+                        <segue destination="TaE-dW-HLB" kind="relationship" relationship="viewControllers" id="xFa-7d-OZE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXC-Zk-Ju3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-601" y="-73"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="A92-eY-ziq">
+            <objects>
+                <navigationController id="50K-2O-46Q" customClass="HomeNavigationController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="IJD-nW-vvI"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="hJW-Ye-hbZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMR-2O-t2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1799" y="627"/>
+        </scene>
+        <!--Seach-->
+        <scene sceneID="CkX-GD-RSo">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="wcc-iO-Y4b" customClass="SearchNavigationController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Seach" image="magnifyingglass" catalog="system" id="41U-g5-eqa"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="2ZY-br-KaM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFf-yP-l0i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-983" y="627"/>
+        </scene>
+        <!--Stock-->
+        <scene sceneID="NbY-P3-ADs">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Gq9-6b-Odq" customClass="StockNavigationController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stock" image="folder" catalog="system" id="1JX-0l-ilA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="bk6-HE-nh0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3JB-8t-hpA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="627"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="VSC-me-aHP">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="TaE-dW-HLB" customClass="ProfileNavigationController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="Pgy-c3-mH6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="436-Vz-RN9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W8N-7g-E3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="627"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="folder" catalog="system" width="64" height="48"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="60"/>
+        <image name="person" catalog="system" width="64" height="60"/>
+        <namedColor name="Brand">
+            <color red="0.33333333333333331" green="0.7686274509803922" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

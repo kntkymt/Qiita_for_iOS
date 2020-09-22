@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Result View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchResultViewController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Nq-DZ-StI">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </containerView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLb-zC-rob">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="brv-Dd-vxJ"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="qRR-aJ-ZnU">
+                                        <barButtonItem key="leftBarButtonItem" image="Back" id="2KC-h7-3au">
+                                            <color key="tintColor" name="Brand"/>
+                                            <connections>
+                                                <action selector="backButtonDidTap:" destination="BYZ-38-t0r" id="2gj-6Y-7Nw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Nq-DZ-StI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="757-QA-5XD"/>
+                            <constraint firstItem="eLb-zC-rob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EfJ-XK-9vs"/>
+                            <constraint firstItem="eLb-zC-rob" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="d8Y-vB-FCk"/>
+                            <constraint firstItem="eLb-zC-rob" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dGM-fq-9Uy"/>
+                            <constraint firstItem="3Nq-DZ-StI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="e9r-V1-2Rd"/>
+                            <constraint firstItem="3Nq-DZ-StI" firstAttribute="top" secondItem="eLb-zC-rob" secondAttribute="bottom" id="tdl-PX-9sV"/>
+                            <constraint firstItem="3Nq-DZ-StI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="u9o-aU-pyB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="3Nq-DZ-StI" id="jGL-J1-7x7"/>
+                        <outlet property="emptyView" destination="WWd-O1-61B" id="PP8-sb-JYz"/>
+                        <outlet property="navigationBarItem" destination="qRR-aJ-ZnU" id="P4D-xp-Jv6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="WWd-O1-61B">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="306"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="記事がありません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzm-Vy-2QM">
+                            <rect key="frame" x="113.5" y="139" width="187" height="28"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="zId-uz-YkN"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="yzm-Vy-2QM" firstAttribute="centerX" secondItem="WWd-O1-61B" secondAttribute="centerX" id="FS9-Ul-lPL"/>
+                        <constraint firstItem="yzm-Vy-2QM" firstAttribute="centerY" secondItem="WWd-O1-61B" secondAttribute="centerY" id="SxG-ob-L3F"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Back" width="8" height="16"/>
+        <namedColor name="Brand">
+            <color red="0.33333333333333331" green="0.7686274509803922" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

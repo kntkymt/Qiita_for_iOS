@@ -1,0 +1,97 @@
+PODS:
+  - Alamofire (4.9.0)
+  - AMScrollingNavbar (5.3.0)
+  - FDFullscreenPopGesture (1.1)
+  - Floaty (4.2.0)
+  - Instantiate (4.0.0)
+  - KeychainAccess (3.2.0)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Nuke (8.1.1)
+  - PluggableAppDelegate (1.3.0)
+  - PromiseKit (6.11.0):
+    - PromiseKit/CorePromise (= 6.11.0)
+    - PromiseKit/Foundation (= 6.11.0)
+    - PromiseKit/UIKit (= 6.11.0)
+  - PromiseKit/CorePromise (6.11.0)
+  - PromiseKit/Foundation (6.11.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.11.0):
+    - PromiseKit/CorePromise
+  - Result (4.1.0)
+  - ReusableKit (3.0.0):
+    - ReusableKit/Core (= 3.0.0)
+  - ReusableKit/Core (3.0.0)
+  - SwiftLint (0.35.0)
+  - SwiftyBeaver (1.7.1)
+  - TabPageViewController (0.2.7)
+  - WebViewWarmupper (0.1.1)
+
+DEPENDENCIES:
+  - AMScrollingNavbar
+  - FDFullscreenPopGesture (= 1.1)
+  - Floaty (~> 4.2.0)
+  - Instantiate
+  - KeychainAccess
+  - Moya
+  - Nuke
+  - PluggableAppDelegate
+  - PromiseKit
+  - ReusableKit
+  - SwiftLint
+  - SwiftyBeaver
+  - TabPageViewController (from `https://github.com/grd888/TabPageViewController.git`, branch `swift5`)
+  - WebViewWarmupper
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AMScrollingNavbar
+    - FDFullscreenPopGesture
+    - Floaty
+    - Instantiate
+    - KeychainAccess
+    - Moya
+    - Nuke
+    - PluggableAppDelegate
+    - PromiseKit
+    - Result
+    - ReusableKit
+    - SwiftLint
+    - SwiftyBeaver
+    - WebViewWarmupper
+
+EXTERNAL SOURCES:
+  TabPageViewController:
+    :branch: swift5
+    :git: https://github.com/grd888/TabPageViewController.git
+
+CHECKOUT OPTIONS:
+  TabPageViewController:
+    :commit: 89bcdfb93c247aaefe28ebedb89feb095b7ed640
+    :git: https://github.com/grd888/TabPageViewController.git
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  AMScrollingNavbar: 8548c0df70da8f894217a709d9b2555b9d0babbe
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
+  Instantiate: 62516e7dde448721c1f5815a9ee7e0669d034d52
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Nuke: 757b88d4ef35a40366cf08c2cd8ea8d12142dbbf
+  PluggableAppDelegate: 94c85bf821d85661c843a86e1aafe0cc12a62634
+  PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  ReusableKit: e5f853ad4652e411f96b6119b2488afa12929be6
+  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
+  SwiftyBeaver: da5e573ad583586c18236324c36900990afe1733
+  TabPageViewController: c1ca3d77dd3e6b55fb4d79b13d7d4b9a799cd398
+  WebViewWarmupper: 22b4c2352e55a6ce7c00fc6646aa0707c04823d3
+
+PODFILE CHECKSUM: ff93dc06fac19a3a38cce9842624314e6ae2f91f
+
+COCOAPODS: 1.7.5

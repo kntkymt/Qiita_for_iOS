@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etW-Kt-xUb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Un6-82-coj"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Profile" id="8Ne-NH-cbz">
+                                        <barButtonItem key="rightBarButtonItem" image="Setting" id="hZq-fN-b7T">
+                                            <color key="tintColor" name="Brand"/>
+                                            <connections>
+                                                <action selector="settingButtonDidTap:" destination="BYZ-38-t0r" id="UYB-iX-a0w"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CET-2O-y7X">
+                                <rect key="frame" x="0.0" y="44" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="cdm-1l-8X6"/>
+                                </constraints>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5o-Pq-gJ8">
+                                <rect key="frame" x="0.0" y="244" width="375" height="423"/>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="etW-Kt-xUb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="55I-pm-dkY"/>
+                            <constraint firstItem="CET-2O-y7X" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CeC-q3-gbB"/>
+                            <constraint firstItem="CET-2O-y7X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DsN-g8-Vzo"/>
+                            <constraint firstItem="etW-Kt-xUb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EWy-57-OJg"/>
+                            <constraint firstItem="v5o-Pq-gJ8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ulz-qf-RpS"/>
+                            <constraint firstItem="CET-2O-y7X" firstAttribute="top" secondItem="etW-Kt-xUb" secondAttribute="bottom" id="c6N-53-6B7"/>
+                            <constraint firstItem="v5o-Pq-gJ8" firstAttribute="top" secondItem="CET-2O-y7X" secondAttribute="bottom" id="dLm-Ae-9ZH"/>
+                            <constraint firstItem="etW-Kt-xUb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lBI-yn-PBb"/>
+                            <constraint firstItem="v5o-Pq-gJ8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q3y-7N-hdb"/>
+                            <constraint firstItem="v5o-Pq-gJ8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qa9-a0-Xpe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="v5o-Pq-gJ8" id="eH2-tq-CeP"/>
+                        <outlet property="emptyView" destination="FLA-Ts-Mt8" id="PFe-Gc-kFI"/>
+                        <outlet property="profileHeaderView" destination="CET-2O-y7X" id="NKw-yd-mTN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="FLA-Ts-Mt8">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="248"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿記事はありません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN6-50-MLw">
+                            <rect key="frame" x="90.5" y="110.5" width="233" height="27.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="uLC-ue-LrB"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="JN6-50-MLw" firstAttribute="centerY" secondItem="FLA-Ts-Mt8" secondAttribute="centerY" id="1Ht-5Y-6T8"/>
+                        <constraint firstItem="JN6-50-MLw" firstAttribute="centerX" secondItem="FLA-Ts-Mt8" secondAttribute="centerX" id="izr-RD-hYF"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Setting" width="30" height="30"/>
+        <namedColor name="Brand">
+            <color red="0.33333333333333331" green="0.7686274509803922" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,13 @@
+[
+    {
+        "trigger": {
+            "url-filter": ".*",
+            "if-domain": ["qiita.com"]
+        },
+        "action": {
+            "type": "css-display-none",
+            "selector": ".st-Header, .st-HeaderContainer, .it-ActionsMobile, .it-ActionsMobile-show, .apm-Content"
+        }
+
+    }
+]

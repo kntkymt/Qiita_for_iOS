@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stock-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Stock" id="BYZ-38-t0r" customClass="StockViewController" customModule="Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J54-3G-v5l">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OYx-CG-VSR"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Stock" id="1c9-hO-yCa"/>
+                                </items>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csy-uW-Rss">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Csy-uW-Rss" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0ev-Pn-vPq"/>
+                            <constraint firstItem="Csy-uW-Rss" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="26m-a4-W8c"/>
+                            <constraint firstItem="J54-3G-v5l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I8q-ED-3Vw"/>
+                            <constraint firstItem="J54-3G-v5l" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rm1-Mo-5Cf"/>
+                            <constraint firstItem="Csy-uW-Rss" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="c0p-y8-uEp"/>
+                            <constraint firstItem="Csy-uW-Rss" firstAttribute="top" secondItem="J54-3G-v5l" secondAttribute="bottom" id="o1E-9N-NIv"/>
+                            <constraint firstItem="J54-3G-v5l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vim-Kw-Y6y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="Csy-uW-Rss" id="VeZ-y5-ZCz"/>
+                        <outlet property="emptyView" destination="7cP-Yw-dgk" id="Xfl-L2-QBl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="7cP-Yw-dgk">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="278"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fep-6s-wxS">
+                            <rect key="frame" x="32.5" y="52.5" width="349.5" height="173"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xa1-k1-tft">
+                                    <rect key="frame" x="124.5" y="1" width="100" height="97.5"/>
+                                    <color key="tintColor" name="Brand"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="Xrp-ZD-wvN"/>
+                                        <constraint firstAttribute="height" constant="100" id="hMr-gW-DEi"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HPF-wx-AzI">
+                                    <rect key="frame" x="0.0" y="116" width="349.5" height="57"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="気になった記事をストックしよう" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lc-2O-l3W">
+                                            <rect key="frame" x="0.0" y="0.0" width="349.5" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="後からここで読むことができます" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJQ-u4-DLn">
+                                            <rect key="frame" x="37" y="35.5" width="275.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="fep-6s-wxS" firstAttribute="centerX" secondItem="7cP-Yw-dgk" secondAttribute="centerX" id="9dG-6J-0qK"/>
+                        <constraint firstItem="fep-6s-wxS" firstAttribute="centerY" secondItem="7cP-Yw-dgk" secondAttribute="centerY" id="UJv-JY-vck"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="xfs-8x-KHV"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="folder" catalog="system" width="128" height="95"/>
+        <namedColor name="Brand">
+            <color red="0.33333333333333331" green="0.7686274509803922" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

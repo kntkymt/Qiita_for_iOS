@@ -1,0 +1,17 @@
+excluded:
+- Pods/
+- Podfile
+- Podfile.lock
+
+disabled_rules:
+- trailing_whitespace
+
+line_length: 200
+
+identifier_name:
+  min_length:
+    error: 2
+  excluded:
+      - id
+      - x
+      - y
