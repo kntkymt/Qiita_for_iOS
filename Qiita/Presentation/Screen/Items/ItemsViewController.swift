@@ -120,7 +120,7 @@ extension ItemsViewController: UITableViewDataSource {
 extension ItemsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = ItemViewController(with: items[indexPath.row])
+        let viewController = ItemViewController(with: (item: items[indexPath.row], stockRepository: AppContainer.shared.stockRepository, likeRepository: AppContainer.shared.likeRepository))
         navigationController?.pushViewController(viewController, animated: true)
     }
 

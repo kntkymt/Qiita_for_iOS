@@ -27,7 +27,7 @@ final class ItemViewController: UIViewController {
                 return
             }
 
-            stockService.checkIsStocked(id: item.id)
+            stockRepository.checkIsStocked(id: item.id)
                 .done { _ in
                     self.floatingButton.addItem("ストック済み", icon: UIImage(systemName: "folder.fill"), handler: { [unowned self] item in
                         self.unstockButtonAction(item: item)
@@ -38,7 +38,7 @@ final class ItemViewController: UIViewController {
                     })
                 }
 
-            likeService.checkIsLiked(id: item.id)
+            likeRepository.checkIsLiked(id: item.id)
                 .done { _ in
                     self.floatingButton.addItem("いいね済み", icon: UIImage(systemName: "hand.thumbsup.fill"), handler: { [unowned self] item in
                         self.unlikeButtonAction(item: item)
@@ -55,8 +55,8 @@ final class ItemViewController: UIViewController {
 
     private var item: Item!
 
-    private var stockService: StockService!
-    private var likeService: LikeService!
+    private var stockRepository: StockRepository!
+    private var likeRepository: LikeRepository!
     private let webView = WKWebViewWarmupper.shared.getView()
 
     // MARK: - Lifecycle
@@ -84,7 +84,7 @@ final class ItemViewController: UIViewController {
     }
 
     private func stockButtonAction(item: FloatyItem) {
-        stockService.stock(id: self.item.id)
+        stockRepository.stock(id: self.item.id)
             .done { _ in
                 item.title = "ストック済み"
                 item.icon = UIImage(systemName: "folder.fill")
@@ -98,7 +98,7 @@ final class ItemViewController: UIViewController {
     }
 
     private func unstockButtonAction(item: FloatyItem) {
-        stockService.unstock(id: self.item.id)
+        stockRepository.unstock(id: self.item.id)
             .done { _ in
                 item.title = "ストックする"
                 item.icon = UIImage(systemName: "folder")
@@ -112,7 +112,7 @@ final class ItemViewController: UIViewController {
     }
 
     private func likeButtonAction(item: FloatyItem) {
-        likeService.like(id: self.item.id)
+        likeRepository.like(id: self.item.id)
             .done { _ in
                 item.title = "いいね済み"
                 item.icon = UIImage(systemName: "hand.thumbsup.fill")
@@ -126,7 +126,7 @@ final class ItemViewController: UIViewController {
     }
 
     private func unlikeButtonAction(item: FloatyItem) {
-        likeService.unlike(id: self.item.id)
+        likeRepository.unlike(id: self.item.id)
             .done { _ in
                 item.title = "いいねする"
                 item.icon = UIImage(systemName: "hand.thumbsup")
@@ -150,9 +150,9 @@ final class ItemViewController: UIViewController {
 
 extension ItemViewController: Storyboardable {
 
-    func inject(_ dependency: Item) {
-        self.stockService = StockService()
-        self.likeService = LikeService()
-        self.item = dependency
+    func inject(_ dependency: (item: Item, stockRepository: StockRepository, likeRepository: LikeRepository)) {
+        self.stockRepository = dependency.stockRepository
+        self.likeRepository = dependency.likeRepository
+        self.item = dependency.item
     }
 }
