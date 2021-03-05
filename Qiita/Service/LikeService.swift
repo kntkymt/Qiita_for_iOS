@@ -8,7 +8,7 @@
 
 import PromiseKit
 
-struct LikeService {
+final class LikeService: LikeRepository {
 
     func like(id: Item.ID) -> Promise<VoidModel> {
         return API.shared.call(ItemTarget.like(id: id))

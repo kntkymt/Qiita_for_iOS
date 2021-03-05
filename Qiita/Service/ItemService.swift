@@ -8,7 +8,7 @@
 
 import PromiseKit
 
-struct ItemService {
+final class ItemService: ItemRepository {
 
     func getItems(page: Int) -> Promise<[Item]> {
         return API.shared.call(ItemTarget.getItems(page: page))

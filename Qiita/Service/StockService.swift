@@ -8,7 +8,7 @@
 
 import PromiseKit
 
-struct StockService {
+final class StockService: StockRepository {
 
     func getStocks(page: Int, perPage: Int = 30) -> Promise<[Item]> {
         return Auth.shared.currentUser

@@ -8,9 +8,9 @@
 
 import PromiseKit
 
-struct TagService {
+final class TagService: TagRepository {
 
-    func getTags(page: Int, perPage: Int = 30, sort: String = "count") -> Promise<[ItemTag]> {
+    func getTags(page: Int, perPage: Int, sort: String) -> Promise<[ItemTag]> {
         return API.shared.call(TagTarget.getTags(page: page, perPage: perPage, sort: sort))
     }
 
