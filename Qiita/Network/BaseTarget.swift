@@ -18,11 +18,7 @@ extension BaseTarget {
     }
 
     var headers: [String: String]? {
-        guard let token = Auth.shared.accessToken else {
-            return [:]
-        }
-
-        return ["Authorization": "Bearer \(token)"]
+        return [:]
     }
 
     var validationType: ValidationType {

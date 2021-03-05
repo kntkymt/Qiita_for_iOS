@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Moya
 
 final class AppContainer {
 
@@ -23,6 +24,8 @@ final class AppContainer {
     let likeRepository: LikeRepository
     let authRepository: AuthRepository
 
+    let apiProvider: MoyaProvider<MultiTarget>
+
     // MARK: - Private
 
     private init() {
@@ -34,6 +37,8 @@ final class AppContainer {
             userRepository = UserService()
             likeRepository = LikeService()
             authRepository = AuthService()
+            
+            apiProvider = APIProviderFactory.createDefault()
         }
     }
 }

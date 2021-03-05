@@ -77,6 +77,9 @@
 		E27C436525F2665D002404DA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C436425F2665D002404DA /* AuthService.swift */; };
 		E27C436925F26726002404DA /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C436825F26726002404DA /* AppContainer.swift */; };
 		E27C436C25F26752002404DA /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C436B25F26752002404DA /* AppEnvironment.swift */; };
+		E27C437025F279CF002404DA /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C436F25F279CF002404DA /* Interceptor.swift */; };
+		E27C437525F27A10002404DA /* AuthTokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C437425F27A10002404DA /* AuthTokenInterceptor.swift */; };
+		E27C437925F27C55002404DA /* APIProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C437825F27C55002404DA /* APIProviderFactory.swift */; };
 		E29B227E233FEB44001CB8D2 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29B227C233FEB44001CB8D2 /* ItemTableViewCell.swift */; };
 		E29B227F233FEB44001CB8D2 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E29B227D233FEB44001CB8D2 /* ItemTableViewCell.xib */; };
 		E29B2281233FFDF6001CB8D2 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29B2280233FFDF6001CB8D2 /* RoundedImageView.swift */; };
@@ -192,6 +195,9 @@
 		E27C436425F2665D002404DA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E27C436825F26726002404DA /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		E27C436B25F26752002404DA /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		E27C436F25F279CF002404DA /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		E27C437425F27A10002404DA /* AuthTokenInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenInterceptor.swift; sourceTree = "<group>"; };
+		E27C437825F27C55002404DA /* APIProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderFactory.swift; sourceTree = "<group>"; };
 		E29B227C233FEB44001CB8D2 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		E29B227D233FEB44001CB8D2 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		E29B2280233FFDF6001CB8D2 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
@@ -513,8 +519,10 @@
 			isa = PBXGroup;
 			children = (
 				E253EEC7233908DC00E6BBC0 /* API.swift */,
+				E27C437825F27C55002404DA /* APIProviderFactory.swift */,
 				E253EEC92339090000E6BBC0 /* BaseTarget.swift */,
 				E253EED32339552500E6BBC0 /* LoggerPlugin.swift */,
+				E27C436E25F279B2002404DA /* Interceptor */,
 				E204B29C23526C3F007847BB /* Authentication */,
 				E2DE88862352DBF000D33AA1 /* Target */,
 			);
@@ -584,6 +592,23 @@
 				E27C436125F26483002404DA /* AuthRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		E27C436E25F279B2002404DA /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				E27C436F25F279CF002404DA /* Interceptor.swift */,
+				E27C437325F279FF002404DA /* Auth */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		E27C437325F279FF002404DA /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E27C437425F27A10002404DA /* AuthTokenInterceptor.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		E29B227B233FEB1F001CB8D2 /* Component */ = {
@@ -893,6 +918,7 @@
 				E204B299235255F1007847BB /* AuthModel.swift in Sources */,
 				E27C435B25F262FD002404DA /* StockRepository.swift in Sources */,
 				E253EEC8233908DC00E6BBC0 /* API.swift in Sources */,
+				E27C437925F27C55002404DA /* APIProviderFactory.swift in Sources */,
 				E204B28A2351FE5B007847BB /* ProfileNavigationController.swift in Sources */,
 				E21B437E233F1C4300640ADB /* UITableView+.swift in Sources */,
 				E20ADA62235A34F600232480 /* UserHeaderView.swift in Sources */,
@@ -917,6 +943,7 @@
 				E2F96E72233E80C000FA68E4 /* HomeNavigationController.swift in Sources */,
 				E2591AB2235AC0AB00BF53FA /* NibInstantintiatable.swift in Sources */,
 				E2FFBF6523484673002D90D7 /* SearchWordCell.swift in Sources */,
+				E27C437025F279CF002404DA /* Interceptor.swift in Sources */,
 				E21B4377233F0AAA00640ADB /* WKWebViewWarmupper.swift in Sources */,
 				E29B2281233FFDF6001CB8D2 /* RoundedImageView.swift in Sources */,
 				E27C435825F26293002404DA /* UserRepository.swift in Sources */,
@@ -944,6 +971,7 @@
 				E253EEAF23383DFB00E6BBC0 /* NSObject+.swift in Sources */,
 				E2F96E74233E80DD00FA68E4 /* SearchNavigationController.swift in Sources */,
 				E2DE888A2352E4A100D33AA1 /* ItemTarget.swift in Sources */,
+				E27C437525F27A10002404DA /* AuthTokenInterceptor.swift in Sources */,
 				E253EEB62338DEFC00E6BBC0 /* LoggerApplicationService.swift in Sources */,
 				E202F21223406EDD00FB08B5 /* UIImageView+.swift in Sources */,
 				E204B29B23526359007847BB /* KeyChains.swift in Sources */,

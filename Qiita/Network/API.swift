@@ -56,13 +56,6 @@ final class API {
     // MARK: - Initializer
 
     private init() {
-        let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = Manager.defaultHTTPHeaders
-        configuration.timeoutIntervalForRequest = 30
-
-        let manager = Manager(configuration: configuration)
-        manager.startRequestsImmediately = false
-
-        provider = MoyaProvider<MultiTarget>(manager: manager, plugins: [LoggerPlugin()])
+        provider = AppContainer.shared.apiProvider
     }
 }

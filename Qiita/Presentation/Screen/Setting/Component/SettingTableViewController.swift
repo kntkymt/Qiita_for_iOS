@@ -10,11 +10,15 @@ import UIKit
 
 final class SettingTableViewController: UITableViewController, AlertShowable {
 
+    // MARK: - Property
+
+    private let authRepository: AuthRepository = AppContainer.shared.authRepository
+
     // MARK: - Outlet
 
     @IBOutlet private weak var signActionLabel: UILabel! {
         didSet {
-            if !Auth.shared.isSignedin {
+            if !authRepository.isSignedin {
                 signActionLabel.text = "ログイン"
                 signActionLabel.textColor = UIColor(named: "Brand")
             }
@@ -32,8 +36,8 @@ final class SettingTableViewController: UITableViewController, AlertShowable {
             tableView.deselectRow(at: $0, animated: true)
         }
         
-        guard Auth.shared.isSignedin else {
-            Auth.shared.signin()
+        guard authRepository.isSignedin else {
+            authRepository.signin()
                 .done { _ in
                     SceneRouter.shared.route(to: .splash, animated: true)
                 }.catch { error in
@@ -43,7 +47,7 @@ final class SettingTableViewController: UITableViewController, AlertShowable {
         }
 
         showAlert(title: "確認", message: "ログアウトしてよろしいですか?") {
-            Auth.shared.signout()
+            self.authRepository.signout()
                 .done { _ in
                     AppContext.isFirstLaunch = true
                     self.dismiss(animated: true)
