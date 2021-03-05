@@ -20,7 +20,7 @@ final class TagHeaderView: UIView {
 
     // MARK: - Property
 
-    private var tagService: TagService!
+    private var tagRepository: TagRepository!
 
     private var itemTag: ItemTag! {
         didSet {
@@ -33,7 +33,7 @@ final class TagHeaderView: UIView {
                 followButton.isHidden = true
                 return
             }
-            tagService.checkIsFollowed(id: itemTag.id)
+            tagRepository.checkIsFollowed(id: itemTag.id)
                 .done { _ in
                     self.followButton.isToggled = true
                 }.catch { _ in
@@ -46,7 +46,7 @@ final class TagHeaderView: UIView {
 
     @IBAction private func followButtonDidTap(_ sender: Any) {
         followButton.isToggled.toggle()
-        (followButton.isToggled ? tagService.follow(id: itemTag.id) : tagService.unfollow(id: itemTag.id))
+        (followButton.isToggled ? tagRepository.follow(id: itemTag.id) : tagRepository.unfollow(id: itemTag.id))
             .done { _ in
             }.catch { error in
                 Logger.error(error)
@@ -58,8 +58,8 @@ final class TagHeaderView: UIView {
 
 extension TagHeaderView: NibInstantiatable {
 
-    func inject(_ dependency: ItemTag) {
-        self.tagService = TagService()
-        self.itemTag = dependency
+    func inject(_ dependency: (itemTag: ItemTag, tagRepository: TagRepository)) {
+        self.tagRepository = dependency.tagRepository
+        self.itemTag = dependency.itemTag
     }
 }

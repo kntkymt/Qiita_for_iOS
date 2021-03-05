@@ -24,7 +24,7 @@ final class SearchResultViewController: UIViewController {
             itemsViewController.delegate = self
         }
     }
-    private var itemService: ItemService!
+    private var itemRepository: ItemRepository!
 
     private var isLoading = false
     private var searchType: SearchType!
@@ -58,7 +58,7 @@ final class SearchResultViewController: UIViewController {
     private func setInitialItems() {
         if isLoading { return }
         isLoading = true
-        itemService.getItems(with: searchType, page: 1)
+        itemRepository.getItems(with: searchType, page: 1)
             .done { items in
                 if items.isEmpty {
                     self.itemsViewController.showEmptyView(view: self.emptyView)
@@ -79,7 +79,7 @@ final class SearchResultViewController: UIViewController {
         if isLoading { return }
         itemsViewController.tableView.startFooterLoading()
         isLoading = true
-        itemService.getItems(with: searchType, page: nextPage)
+        itemRepository.getItems(with: searchType, page: nextPage)
             .done { items in
                 self.nextPage += 1
                 self.itemsViewController.items += items
@@ -103,13 +103,13 @@ final class SearchResultViewController: UIViewController {
 
 extension SearchResultViewController: Storyboardable {
 
-    func inject(_ dependency: SearchType) {
-        self.searchType = dependency
-        self.itemService = ItemService()
+    func inject(_ dependency: (searchType: SearchType, itemRepository: ItemRepository)) {
+        self.searchType = dependency.searchType
+        self.itemRepository = dependency.itemRepository
 
-        var headerView: TagHeaderView? = nil
-        if case .tag(let tag) = dependency {
-            headerView = TagHeaderView(with: tag)
+        var headerView: TagHeaderView?
+        if case .tag(let tag) = dependency.searchType {
+            headerView = TagHeaderView(with: (itemTag: tag, tagRepository: AppContainer.shared.tagRepository))
         }
         self.itemsViewController = ItemsViewController(with: headerView)
     }
