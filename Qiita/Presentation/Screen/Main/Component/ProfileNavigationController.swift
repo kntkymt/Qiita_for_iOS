@@ -12,7 +12,7 @@ final class ProfileNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewController = ProfileViewController(with: ())
+        let viewController = ProfileViewController(with: AppContainer.shared.itemRepository)
         setViewControllers([viewController], animated: false)
     }
 }

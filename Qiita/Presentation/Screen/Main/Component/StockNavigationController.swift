@@ -12,7 +12,7 @@ final class StockNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewController = StockViewController(with: ())
+        let viewController = StockViewController(with: AppContainer.shared.stockRepository)
         setViewControllers([viewController], animated: false)
     }
 }

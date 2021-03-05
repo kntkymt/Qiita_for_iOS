@@ -31,7 +31,7 @@ final class ProfileViewController: UIViewController {
         }
     }
 
-    private var itemService: ItemService!
+    private var itemRepository: ItemRepository!
 
     private var nextPage = 2
     private var isLoading = false
@@ -79,7 +79,7 @@ final class ProfileViewController: UIViewController {
     private func setInitialItems() {
         if isLoading { return }
         isLoading = true
-        itemService.getAuthenticatedUserItems(page: 1)
+        itemRepository.getAuthenticatedUserItems(page: 1, perPage: 30)
             .done { items in
                 if items.isEmpty {
                     self.itemsViewController.showEmptyView(view: self.emptyView)
@@ -100,7 +100,7 @@ final class ProfileViewController: UIViewController {
         if isLoading { return }
         isLoading = true
         itemsViewController.tableView.startFooterLoading()
-        itemService.getAuthenticatedUserItems(page: nextPage)
+        itemRepository.getAuthenticatedUserItems(page: nextPage, perPage: 30)
             .done { items in
                 self.nextPage += 1
                 self.itemsViewController.items += items
@@ -131,8 +131,8 @@ final class ProfileViewController: UIViewController {
 
 extension ProfileViewController: Storyboardable {
 
-    func inject(_ dependency: ()) {
-        self.itemService = ItemService()
+    func inject(_ dependency: ItemRepository) {
+        self.itemRepository = dependency
         self.itemsViewController = ItemsViewController(with: nil)
     }
 }
