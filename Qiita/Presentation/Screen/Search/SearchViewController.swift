@@ -79,7 +79,7 @@ final class SearchViewController: UIViewController {
     // MARK: - Private
 
     private func setInitialTags() {
-        tagService.getTags(page: 1)
+        tagService.getTags(page: 1, perPage: 30, sort: "count")
             .done { tags in
                 self.searchTagList = tags
             }.catch { error in
