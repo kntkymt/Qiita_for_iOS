@@ -105,7 +105,7 @@ extension ItemsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(Reusable.cell, for: indexPath, with: items[indexPath.row])
+        let cell = tableView.dequeue(Reusable.cell, for: indexPath, with: (item: items[indexPath.row], stockRepository: AppContainer.shared.stockRepository))
 
         return cell
     }

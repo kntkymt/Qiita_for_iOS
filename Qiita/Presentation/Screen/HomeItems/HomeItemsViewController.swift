@@ -23,7 +23,7 @@ final class HomeItemsViewController: UIViewController {
             itemsViewController.delegate = self
         }
     }
-    private var itemService: ItemService!
+    private var itemRepository: ItemRepository!
 
     private var isLoading = false
     private var searchType: SearchType?
@@ -67,7 +67,7 @@ final class HomeItemsViewController: UIViewController {
     private func setInitialItems() {
         if isLoading { return }
         isLoading = true
-        itemService.getItems(with: searchType, page: 1)
+        itemRepository.getItems(with: searchType, page: 1)
             .done { items in
                 self.itemsViewController.items = items
                 self.itemsViewController.refreshControl.endRefreshing()
@@ -83,7 +83,7 @@ final class HomeItemsViewController: UIViewController {
         if isLoading { return }
         itemsViewController.tableView.startFooterLoading()
         isLoading = true
-        itemService.getItems(with: searchType, page: nextPage)
+        itemRepository.getItems(with: searchType, page: nextPage)
             .done { items in
                 self.nextPage += 1
                 self.itemsViewController.items += items
@@ -101,10 +101,10 @@ final class HomeItemsViewController: UIViewController {
 
 extension HomeItemsViewController: Storyboardable {
 
-    func inject(_ dependency: SearchType?) {
+    func inject(_ dependency: (searchType: SearchType?, itemRepository: ItemRepository)) {
         self.itemsViewController = ItemsViewController(with: nil)
-        self.itemService = ItemService()
-        self.searchType = dependency
+        self.itemRepository = dependency.itemRepository
+        self.searchType = dependency.searchType
     }
 }
 

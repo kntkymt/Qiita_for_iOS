@@ -38,11 +38,11 @@ final class HomeViewController: UIViewController {
         let tabPageViewController = TabPageViewController()
         tabPageViewController.isInfinity = true
         tabPageViewController.tabItems = [
-            (HomeItemsViewController(with: nil), "新着"),
-            (HomeItemsViewController(with: .word("Swift")), "Swift"),
-            (HomeItemsViewController(with: .word("iOS")), "iOS"),
-            (HomeItemsViewController(with: .word("Kotlin")), "Kotlin"),
-            (HomeItemsViewController(with: .word("Android")), "Android")
+            (HomeItemsViewController(with: (searchType: nil, itemRepository: AppContainer.shared.itemRepository)), "新着"),
+            (HomeItemsViewController(with: (searchType: .word("Swift"), itemRepository: AppContainer.shared.itemRepository)), "Swift"),
+            (HomeItemsViewController(with: (searchType: .word("iOS"), itemRepository: AppContainer.shared.itemRepository)), "iOS"),
+            (HomeItemsViewController(with: (searchType: .word("Kotlin"), itemRepository: AppContainer.shared.itemRepository)), "Kotlin"),
+            (HomeItemsViewController(with: (searchType: .word("Android"), itemRepository: AppContainer.shared.itemRepository)), "Android")
         ]
         tabPageViewController.option.tabHeight = 44
         tabPageViewController.option.isTranslucent = false
