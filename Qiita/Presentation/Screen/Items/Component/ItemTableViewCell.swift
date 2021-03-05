@@ -21,7 +21,7 @@ final class ItemTableViewCell: UITableViewCell {
 
     // MARK: - Property
 
-    private var stockService: StockService!
+    private var stockRepository: StockRepository!
 
     private var item: Item! {
         didSet {
@@ -35,7 +35,7 @@ final class ItemTableViewCell: UITableViewCell {
                 stockButton.isHidden = true
                 return
             }
-            stockService.checkIsStocked(id: item.id)
+            stockRepository.checkIsStocked(id: item.id)
                 .done { _ in
                     self.stockButton.isToggled = true
                 }.catch { _ in
@@ -48,7 +48,7 @@ final class ItemTableViewCell: UITableViewCell {
 
     @IBAction private func stockButtonDidTap(_ sender: Any) {
         stockButton.isToggled.toggle()
-        (stockButton.isToggled ? stockService.stock(id: item.id) : stockService.unstock(id: item.id))
+        (stockButton.isToggled ? stockRepository.stock(id: item.id) : stockRepository.unstock(id: item.id))
             .done { _ in
 
             }.catch { error in
@@ -61,8 +61,8 @@ final class ItemTableViewCell: UITableViewCell {
 
 extension ItemTableViewCell: NibInstantiatable {
 
-    func inject(_ dependency: Item) {
-        self.stockService = StockService()
-        self.item = dependency
+    func inject(_ dependency: (item: Item, stockRepository: StockRepository)) {
+        self.stockRepository = dependency.stockRepository
+        self.item = dependency.item
     }
 }

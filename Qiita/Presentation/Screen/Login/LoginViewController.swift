@@ -10,6 +10,10 @@ import UIKit
 
 final class LoginViewController: UIViewController {
 
+    // MARK: - Property
+
+    private var authRepository: AuthRepository!
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -25,7 +29,7 @@ final class LoginViewController: UIViewController {
     // MARK: - Action
     
     @IBAction private func signinButtonDidTap(_ sender: Any) {
-        Auth.shared.signin()
+        authRepository.signin()
             .done { auth in
                 Logger.debug(auth)
                 AppContext.isFirstLaunch = false
@@ -45,6 +49,7 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: Storyboardable {
 
-    func inject(_ dependency: ()) {
+    func inject(_ dependency: AuthRepository) {
+        self.authRepository = dependency
     }
 }

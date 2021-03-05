@@ -8,7 +8,7 @@
 
 import PromiseKit
 
-struct UserService {
+final class UserService: UserRepository {
 
     func getUser(id: User.ID) -> Promise<User> {
         return API.shared.call(UserTarget.get(id: id))

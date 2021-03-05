@@ -29,7 +29,7 @@ final class StockViewController: UIViewController {
             itemsViewController.delegate = self
         }
     }
-    private var stockService: StockService!
+    private var stockRepository: StockRepository!
 
     private var nextPage = 2
     private var isLoading = false
@@ -59,7 +59,7 @@ final class StockViewController: UIViewController {
     private func setInitialItems() {
         if isLoading { return }
         isLoading = true
-        stockService.getStocks(page: 1)
+        stockRepository.getStocks(page: 1, perPage: 10)
             .done { items in
                 if items.isEmpty {
                     self.itemsViewController.showEmptyView(view: self.emptyView)
@@ -80,7 +80,7 @@ final class StockViewController: UIViewController {
         if isLoading { return }
         isLoading = true
         self.itemsViewController.tableView.startFooterLoading()
-        stockService.getStocks(page: nextPage)
+        stockRepository.getStocks(page: nextPage, perPage: 10)
             .done { items in
                 self.nextPage += 1
                 self.itemsViewController.items += items
@@ -104,8 +104,8 @@ final class StockViewController: UIViewController {
 
 extension StockViewController: Storyboardable {
 
-    func inject(_ dependency: ()) {
-        self.stockService = StockService()
+    func inject(_ dependency: StockRepository) {
+        self.stockRepository = dependency
         self.itemsViewController = ItemsViewController(with: nil)
     }
 }

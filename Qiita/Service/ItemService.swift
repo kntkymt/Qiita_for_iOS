@@ -8,7 +8,7 @@
 
 import PromiseKit
 
-struct ItemService {
+final class ItemService: ItemRepository {
 
     func getItems(page: Int) -> Promise<[Item]> {
         return API.shared.call(ItemTarget.getItems(page: page))
@@ -29,11 +29,11 @@ struct ItemService {
     }
 
     // TODO: UserServiceに置く？
-    func getItems(by user: User, page: Int, perPage: Int = 30) -> Promise<[Item]> {
+    func getItems(by user: User, page: Int, perPage: Int) -> Promise<[Item]> {
         return API.shared.call(UserTarget.getItems(page: page, perPage: perPage, id: user.id))
     }
 
-    func getAuthenticatedUserItems(page: Int, perPage: Int = 30) -> Promise<[Item]> {
+    func getAuthenticatedUserItems(page: Int, perPage: Int) -> Promise<[Item]> {
         return API.shared.call(UserTarget.getAuthenticatedUserItems(page: page, perPage: perPage))
     }
 }

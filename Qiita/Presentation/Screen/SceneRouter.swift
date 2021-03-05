@@ -17,8 +17,8 @@ final class SceneRouter {
 
         var viewController: UIViewController {
             switch self {
-            case .splash: return SplashViewController(with: ())
-            case .login: return LoginViewController(with: ())
+            case .splash: return SplashViewController(with: AppContainer.shared.authRepository)
+            case .login: return LoginViewController(with: AppContainer.shared.authRepository)
             case .main: return MainViewController(with: ())
             }
         }

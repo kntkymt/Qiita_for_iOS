@@ -12,7 +12,7 @@ final class SearchNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewController = SearchViewController(with: ())
+        let viewController = SearchViewController(with: AppContainer.shared.tagRepository)
         setViewControllers([viewController], animated: false)
     }
 }

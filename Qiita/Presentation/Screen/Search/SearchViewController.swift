@@ -54,7 +54,7 @@ final class SearchViewController: UIViewController {
 
     lazy var collectionViewLayout: UICollectionViewLayout = {
         var sections = self.sections
-        let layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, _) -> NSCollectionLayoutSection? in
             return sections[sectionIndex].layoutSection(based: self.view)
         }
         return layout
@@ -66,7 +66,7 @@ final class SearchViewController: UIViewController {
         }
     }
 
-    private var tagService: TagService!
+    private var tagRepository: TagRepository!
 
     // MARK: - Lifecycle
 
@@ -79,7 +79,7 @@ final class SearchViewController: UIViewController {
     // MARK: - Private
 
     private func setInitialTags() {
-        tagService.getTags(page: 1)
+        tagRepository.getTags(page: 1, perPage: 30, sort: "count")
             .done { tags in
                 self.searchTagList = tags
             }.catch { error in
@@ -88,7 +88,7 @@ final class SearchViewController: UIViewController {
     }
 
     private func search(with type: SearchType) {
-        let viewController = SearchResultViewController(with: type)
+        let viewController = SearchResultViewController(with: (searchType: type, itemRepository: AppContainer.shared.itemRepository))
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -120,8 +120,8 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: Storyboardable {
 
-    func inject(_ dependency: ()) {
-        self.tagService = TagService()
+    func inject(_ dependency: TagRepository) {
+        self.tagRepository = dependency
     }
 }
 
