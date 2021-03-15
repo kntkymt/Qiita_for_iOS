@@ -20,7 +20,13 @@ final class AuthTokenInterceptor: Interceptor {
         }
 
         guard let accessToken = Auth.shared.accessToken else {
-            done(.failure(.requestMapping("authorization token notfound")))
+            if Auth.shared.isSignedin {
+                done(.failure(.requestMapping("authorization token notfound")))
+            } else {
+                // アクセストークン取得API, 認可無しAPIの場合
+                done(.success(request))
+            }
+
             return
         }
 
